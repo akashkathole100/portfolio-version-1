@@ -6,33 +6,8 @@ from streamlit_lottie import st_lottie  # pip install streamlit-lottie
 from pathlib import Path
 
 
-
-
-from pathlib import Path
-from os import chdir
-
-path = Path("C:/Users/Akash/Documents/portfolio/data/Resume.pdf")
-
-print(f'Current working directory: {path.cwd()}')
-
-chdir(path)
-
-print(f'Current working directory: {path.cwd()}')
-
-chdir('..')
-
-
-
-
-
-
-
-
-
-
-
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-resume_file = "C:/Users/Akash/Documents/portfolio/data/Resume.pdf"
+resume_file = "A4 Resume Purple and Off White Pastel Color Resume (1).pdf"
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="Portfolio", page_icon=":blush:", layout="wide")
@@ -59,7 +34,7 @@ lottie_social = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_zw
 lottie_projects = load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_cwA7Cn.json")
 
 
-with open("C:/Users/Akash/Documents/portfolio/data/style.css") as f:
+with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
 #####################
@@ -74,7 +49,7 @@ with open(resume_file, "rb") as pdf_file:
     
     
 
-image = Image.open('C:/Users/Akash/Documents/portfolio/data/wwe.png')
+image = Image.open('wwe.png')
 st.image(image, width=200,clamp=True)
 st.download_button(
         label=" 📄 Download Resume",
